@@ -1,33 +1,31 @@
  window.onload = function () {
-//  // create secret key to select actors
-
-var actors = ["Robert Redford", "Brad Pitt", "Kevin Costner"];
-	var randomIndex = Math.round(Math.random() * (actors.length-1));
-	var randomActor = actors[randomIndex];
-	console.log (randomActor);
-	$("button").click(function(){
-	var buttonName = $(this).text();
-})
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  
-  
 
-  var guess ;             // Guess
-  var guesses = [ ];      // Stored guesses
-  var chances ;             // chances
-  var counter ;           // Count correct guesses
-  var space;              // Number of spaces in word '-'
 
-var showGuesses = document.getElementById("myGuesses");
- 
-	// create alphabet ul
+  
+  	var actors = ["Robert Redford", "Brad Pitt", "Kevin Costner", "Paul Newman", "Johnny Depp", "George Clooney", "Ryan Gosling", "Denzel Washington", "Jon Hamm"];
+	var randomIndex = Math.round(Math.random() * (actors.length-1));
+	var word = actors[randomIndex];
+	word = word.replace(/\s/g, "-");
+    console.log(word);
+    
+
+	var guess ;             // Guess
+  	var guesses = [ ];      // Stored guesses
+  	var lives ;             // Lives
+  	var counter ;           // Count correct guesses
+  	var space ;              // Number of spaces in word '-'
+  // Get elements
+  var showLives = document.getElementById("mylives");
+
+   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('buttons');
     letters = document.createElement('ul');
-
+buttons();
     for (var i = 0; i < alphabet.length; i++) {
       letters.id = 'alphabet';
       list = document.createElement('li');
@@ -38,12 +36,12 @@ var showGuesses = document.getElementById("myGuesses");
       letters.appendChild(list);
     }
   }
-    // Create guesses ul
+  // Create guesses ul
    result = function () {
-    buttonName = document.getElementById('hold');
+    wordHolder = document.getElementById('hold');
     correct = document.createElement('ul');
 
-    for (var i = 0; i < word.length; i++) {
+    for (var i = 0; i < randomActor.length; i++) {
       correct.setAttribute('id', 'my-word');
       guess = document.createElement('li');
       guess.setAttribute('class', 'guess');
@@ -55,87 +53,51 @@ var showGuesses = document.getElementById("myGuesses");
       }
 
       guesses.push(guess);
-      randomActor.appendChild(correct);
+      wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
   }
-
-   // Show chances
+  
+  // Show lives
    comments = function () {
-    showChances.innerHTML = "You have " + chances + " chances";
-    if (chances < 1) {
-      showChances.innerHTML = "Game Over";
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
     }
-    for (var i = 0; i < guesses.length; i++) {
+    for (var i = 0; i < geusses.length; i++) {
       if (counter + space === guesses.length) {
-        showChances.innerHTML = "You Win!";
+        showLives.innerHTML = "You Win!";
       }
     }
   }
-		
-		// OnClick Function
+  // OnClick Function
    check = function () {
     list.onclick = function () {
       var guess = (this.innerHTML);
       this.setAttribute("class", "active");
       this.onclick = null;
-      for (var i = 0; i < randomActor.length; i++) {
-        if (randomActor[i] === guess) {
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
         } 
       }
-      var j = (randomActor.indexOf(guess));
+      var j = (word.indexOf(guess));
       if (j === -1) {
-        chances -= 1;
+        lives -= 1;
         comments();
         animate();
       } else {
         comments();
       }
     }
-  }	
-
-   // Play
-  play = function () {
-  	 guesses = [ ];
-    chances = 10;
-    counter = 0;
-    space = 0;
-    result();
-    comments();
-    selectCat();
-    canvas();
   }
+   // Reset
 
-	// 	
-	// for (var i = randomActor.length - 1; i >= 0; i--) {
-	// 	randomActor[i];
-	// 	conole.log ()
-	// }
-	// 	function(letter()) {
-	// 		if (letter.toLowerCase() === buttonName.toLowerCase()){
-	// 			console.log("match");
-	// 	}
-		
-
-			
-	// 	};
-		
-
-	// });
-
-
-// <p>Click the button to display the array values after the split.</p>
-
-// <button onclick="myFunction()">Try it</button>
-
-// <p id="demo"></p>
-
-// <script>
-// function myFunction() {
-//     var str = "How are you doing today?";
-//     var res = str.split(" ");
-//     document.getElementById("demo").innerHTML = res;
-// }
-// </script>
+  document.getElementById('reset').onclick = function() {
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    context.clearRect(0, 0, 400, 400);
+    play();
+  }
+}

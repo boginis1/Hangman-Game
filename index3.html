@@ -1,0 +1,81 @@
+	
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src ="assets/javascript/game.js"></script>
+</head>
+<body>
+
+	
+	<div class="jumbotron">
+		Beautiful Actors Hangman Game
+		<br>
+		
+<img src="assets/images/jonhamm.jpg" alt="Jon Hamm">
+
+	</div>
+
+	<div class="alphabet">
+		Click any key below to begin the game
+		<br>
+		<input type="button" id="A" value="A">
+		<input type="button" id="B" value="B">
+		<input type="button" id="C" value="C">
+		<input type="button" id="D" value="D">
+		<input type="button" id="E" value="E">
+		<input type="button" id="F" value="F">
+		<input type="button" id="G" value="G">
+		<input type="button" id="H" value="H">
+		<input type="button" id="I" value="I">
+		<input type="button" id="J" value="J">
+		<input type="button" id="K" value="K">
+		<input type="button" id="L" value="L">
+		<input type="button" id="M" value="M">
+		<input type="button" id="N" value="N">
+		<input type="button" id="O" value="O">
+		<input type="button" id="P" value="P">
+		<input type="button" id="Q" value="Q">
+		<input type="button" id="R" value="R">
+		<input type="button" id="S" value="S">
+		<input type="button" id="T" value="T">
+		<input type="button" id="U" value="U">
+		<input type="button" id="V" value="V">
+		<input type="button" id="W" value="W">
+		<input type="button" id="X" value="X">
+		<input type="button" id="Y" value="Y">
+		<input type="button" id="Z" value="Z">
+
+<!--create alphabet array and assign letter values -->
+
+
+	</div>
+
+	<div class="wins">
+		Wins
+		<!--once currentWord matches actor, add one to the Win-->
+	</div>
+
+	<div class="currentWord">
+		Current Word
+		<!--create slots for each letter in randomactor selected and then if alphabet button pressed is a match, fill in spot with that letter-->
+	</div>
+
+	<div class="guessesRemaining">
+
+		Guesses remaining
+		<!--csubtract wrong guesses from 12 and count down.  at zero alert you lose-->
+	</div>
+
+	<div class="lettersGuessed">
+		Letters already guessed
+		<!--if letter doesn't match current word, store it here and take it out of options-->
+	</div>
+
+</body>
+</html>
+
+
+
