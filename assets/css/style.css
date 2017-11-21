@@ -1,43 +1,37 @@
 body {
   background-color: grey;
   border-style: solid;
-   text-align: center 
-
+  text-align: center 
 }
 
 img {
+  float:left;
   height:150px;
   width:120px;
-
 }
 
-div.wrapper {
+div.header {
   background-color: black;
     float:left;
    width: 100%;
        color: white;
-  font-family: 'Georgia', Times, Times New Roman, serif;
+  font-family: 'Roboto', sans-serif;
   font-size:12px;
-  height:150px;
-   }
+     }
 
-.wrappper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-canvas {
-  color: #fff;
-  border: #fff dashed 2px;
-  padding: 15px;
-}
+div.section {
+  background-color: blue;
+    float:left;
+   width: 100%;
+    font-family: 'Roboto', sans-serif;
+     }
 
 h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   margin: 5px 0;
+  color: white;
 }
 
 h1 {
@@ -57,99 +51,55 @@ p {
   padding: 0;
   max-width: 900px;
 }
-#alphabet:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#alphabet li {
-  float: left;
-  margin: 0 10px 10px 0;
-  list-style: none;
-  width: 35px;
-  height: 30px;
-  padding-top: 10px;
-  background: #fff;
-  color: blue;
-  cursor: pointer;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border: solid 1px #fff;
-}
-#alphabet li:hover {
-  background: #c1d72e;
-  border: solid 1px #fff;
-  color: #fff;
-}
-
-#my-word {
-  margin: 0;
-  display: block;
-  padding: 0;
-  display: block;
-}
-
-#my-word li {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  display: inline-block;
-  padding: 0 10px;
-  font-size: 1.6em;
-}
-
-.active {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  cursor: default;
-}
-.active:hover {
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-}
-
-#mylives {
-  font-size: 1.6em;
-  text-align: center;
-  display: block;
-}
-
 button {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -khtml-border-radius: 5px;
-  background: #c1d72e;
+  
+  background: black;
   color: white;
   border: solid 1px #fff;
   text-decoration: none;
   cursor: pointer;
-  font-size: 1.2em;
-  padding: 18px 10px;
+  font-size: 1.8em;
+  padding: 10px 10px;
   width: 180px;
-  margin: 10px;
+  margin: 5px;
   outline: none;
 }
 button:hover {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+ 
   background: #fff;
   border: solid 1px #fff;
-  color: #c1d72e;
+  color: blue;
 }
+
+#currentWord {
+  background-color: black;
+    float:left;
+   width: 100%;
+   margin-top:30px;
+   padding:10px;
+       color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size:30px;
+     }
+#wrongLetters {
+  background-color: blue;
+  float:left;
+  width: 100%;
+  color: white;
+  margin-top:10px;
+  font-family: 'Roboto', sans-serif;
+  font-size:1.6em;
+  height:50px;
+   }
+
+#mylives {
+  font-size: 1.6em;
+  color:white;
+  text-align: center;
+  display: block;
+}
+
+
 
 @media (max-width: 767px) {
   #alphabet {
