@@ -4,10 +4,11 @@ body {
   text-align: center 
 }
 
-img {
-  float:left;
+div.header img {
+  margin:auto;
   height:150px;
   width:120px;
+  
 }
 
 div.header {
@@ -17,14 +18,15 @@ div.header {
        color: white;
   font-family: 'Roboto', sans-serif;
   font-size:12px;
+  img: height:;
      }
 
 div.section {
-  background-color: blue;
     float:left;
    width: 100%;
-    font-family: 'Roboto', sans-serif;
-     }
+    font-family: 'Roboto', sans-serif; 
+    height: 100px;
+  }
 
 h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
@@ -60,7 +62,7 @@ button {
   cursor: pointer;
   font-size: 1.8em;
   padding: 10px 10px;
-  width: 180px;
+  width: 90px;
   margin: 5px;
   outline: none;
 }
@@ -77,12 +79,11 @@ button:hover {
    width: 100%;
    margin-top:30px;
    padding:10px;
-       color: white;
+  color: white;
   font-family: 'Roboto', sans-serif;
-  font-size:30px;
+  font-size:40px;
      }
 #wrongLetters {
-  background-color: blue;
   float:left;
   width: 100%;
   color: white;
@@ -92,14 +93,30 @@ button:hover {
   height:50px;
    }
 
-#mylives {
-  font-size: 1.6em;
+#currentGuesses {
+  background-color: grey;
+  font-size: 30px;
   color:white;
   text-align: center;
   display: block;
+  height:80px;
+
 }
+#button.reset {
+  float:left;
+  width: 100%;
+  color: white;
+  margin-top:10px;
+  font-family: 'Roboto', sans-serif;
+  font-size:1.6em;
+  height:50px;
+   }
 
-
+#actorImage.img {
+  margin:auto;
+  height:200px
+  width:200px;
+}
 
 @media (max-width: 767px) {
   #alphabet {
